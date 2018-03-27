@@ -87,9 +87,15 @@ I ran with the following configuration (mostly from LeNet example):
 * Learning rate = 0.001
 * Optimizer = AdamOptimizer
 
+I chose to use the CPU on my laptop given data size was small enough.  I will probably play with using a GPU on AWS at some point  :)
+
 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
-I took MANY different steps to get to this 
+I took MANY different steps to get to this point:
+* Tried LeNet as is with more epochs.  Got close.  
+* Added normalization, got closer.
+* Added grayscale, got even closer.  May have even crossed the 93% threshold.
+* Supplemented low represented signs.  Easily crossed the targeted accuracy.
 
 My final model results were:
 * training set accuracy of 0.998
@@ -99,7 +105,7 @@ My final model results were:
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
 
-I chose to use the LeNet architecture as my base.  I didn't deviate heavily from this given it was giving me solid performance.
+I chose to use the LeNet architecture as my base.  I didn't deviate heavily from this given it was giving me solid performance.  I did add some max pooling layers to draw out key characteristics.
 
 * What were some problems with the initial architecture?
 
@@ -107,24 +113,25 @@ At first it wasn't fitting the training data well given the class imbalance.  Af
 
 * How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
 
-I did add some max pooling to call out the features in the image better with the hopes of 
+I did add some max pooling to call out the features as explained above.
 
 * Which parameters were tuned? How were they adjusted and why?
 
-I added additional epochs to train the model longer and learn the training set better.
+I added additional epochs to train the model longer and learn the training set better.  I played with the learning rate, but found the the default from the LeNet example served me well.
 
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
 
 Again, I chose to base my architecture off the LeNet architecture.  This leverage CNNs (good for images) and works well as a starting point for image classification problems.  I could've added dropout to help with generalization and avoiding overfitting on the training set.
 
 If a well known architecture was chosen:
+
 * What architecture was chosen?  
 
 Based off of LeNet, but added some max pooling layers.
 
 * Why did you believe it would be relevant to the traffic sign application?
 
-See above.
+See above.  LeNet is great for image classification.
 
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
  
