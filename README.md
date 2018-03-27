@@ -92,22 +92,43 @@ I ran with the following configuration (mostly from LeNet example):
 I took MANY different steps to get to this 
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+* training set accuracy of 0.998
+* validation set accuracy of 0.951
+* test set accuracy of 0.923
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
+
+I chose to use the LeNet architecture as my base.  I didn't deviate heavily from this given it was giving me solid performance.
+
 * What were some problems with the initial architecture?
+
+At first it wasn't fitting the training data well given the class imbalance.  After this, it started to fit the data much better.
+
 * How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
+
+I did add some max pooling to call out the features in the image better with the hopes of 
+
 * Which parameters were tuned? How were they adjusted and why?
+
+I added additional epochs to train the model longer and learn the training set better.
+
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
 
+Again, I chose to base my architecture off the LeNet architecture.  This leverage CNNs (good for images) and works well as a starting point for image classification problems.  I could've added dropout to help with generalization and avoiding overfitting on the training set.
+
 If a well known architecture was chosen:
-* What architecture was chosen?
+* What architecture was chosen?  
+
+Based off of LeNet, but added some max pooling layers.
+
 * Why did you believe it would be relevant to the traffic sign application?
+
+See above.
+
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
  
+It's fitting the training set well, but slightly overfitting given the test and validation accuracy is a bit lower.  I could've added some dropout or early stopping to avoid such overfitting, but given the task, the model meets the goal.
 
 #### Test a Model on New Images
 
@@ -115,8 +136,11 @@ If a well known architecture was chosen:
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+<img src="https://github.com/jhevrin2/CarND-Traffic-Sign-Classifier-Project/blob/master/tests/bump.jpg" width="250px" height="250px">
+<img src="https://github.com/jhevrin2/CarND-Traffic-Sign-Classifier-Project/blob/master/tests/do_not_enter.jpg" width="250px" height="250px">
+<img src="https://github.com/jhevrin2/CarND-Traffic-Sign-Classifier-Project/blob/master/tests/kph_30.jpg" width="250px" height="250px">
+<img src="https://github.com/jhevrin2/CarND-Traffic-Sign-Classifier-Project/blob/master/tests/stop.jpg" width="250px" height="250px">
+<img src="https://github.com/jhevrin2/CarND-Traffic-Sign-Classifier-Project/blob/master/tests/yield.jpg" width="250px" height="250px">
 
 The first image might be difficult to classify because ...
 
