@@ -149,6 +149,8 @@ Here are five German traffic signs that I found on the web:
 <img src="https://github.com/jhevrin2/CarND-Traffic-Sign-Classifier-Project/blob/master/tests/stop.jpg" width="250px" height="250px">
 <img src="https://github.com/jhevrin2/CarND-Traffic-Sign-Classifier-Project/blob/master/tests/yield.jpg" width="250px" height="250px">
 
+These images should be fairly straightforward to predict given how clean they are.  Hopefully the model will perform well on these!
+
 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
 Here are the results of the prediction:
