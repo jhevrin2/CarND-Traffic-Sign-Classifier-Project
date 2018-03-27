@@ -51,12 +51,16 @@ Due to this, I will augment the lesser represented signs doing a random rotation
 Before:  ![before](https://github.com/jhevrin2/CarND-Traffic-Sign-Classifier-Project/blob/master/figures/crossing.png)
 After:  ![after](https://github.com/jhevrin2/CarND-Traffic-Sign-Classifier-Project/blob/master/figures/crossing-rotate.png)
 
-After this, I chose to grayscale.  This can help to remove noise and make it easier for the model to learn the different markings of the sign.
+* Here is the new distribution with more images (no sign has less than 1000):
+
+![distribution_new](https://github.com/jhevrin2/CarND-Traffic-Sign-Classifier-Project/blob/master/figures/distribution_new.png)
+
+* After this, I chose to grayscale.  This can help to remove noise and make it easier for the model to learn the different markings of the sign.
 
 Before:  ![before](https://github.com/jhevrin2/CarND-Traffic-Sign-Classifier-Project/blob/master/figures/crossing.png)
 After:  ![after](https://github.com/jhevrin2/CarND-Traffic-Sign-Classifier-Project/blob/master/figures/crossing-gray.png)
 
-Finally, I normalized the image.  This will help to center and scale the image to assist with gradient decent.
+* Finally, I normalized the image.  This will help to center and scale the image to assist with gradient decent.
 
 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
@@ -78,12 +82,14 @@ I mostly used the LeNet archticture from the lab assignment.  I did add a couple
 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
 I ran with the following configuration (mostly from LeNet example):
-* Epochs = 20
+* Epochs = 25
 * Batch size = 128
 * Learning rate = 0.001
 * Optimizer = AdamOptimizer
 
 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+
+I took MANY different steps to get to this 
 
 My final model results were:
 * training set accuracy of ?
